@@ -1,0 +1,30 @@
+{
+	"ip": "http://192.168.15.101",
+	"equipmentId": "XXXXX",
+	"cod_brewery": "0000",
+	"type": "cam",
+	"model": "none",
+	"metricType": "TEMPERATURE",
+	"stageId": "3",
+	"profileId": "X" 
+}
+{
+	"ip": "http://192.168.15.102",
+	"equipmentId": "XXXXX",
+	"cod_brewery": "0003",
+	"type": "cam",
+	"model": "none",
+	"metricType": "VOLUME",
+	"stageId": "5",
+	"profileId": "X" 
+}
+{
+	"ip": "http://192.168.15.103",
+	"equipmentId": "EEEEE",
+	"cod_brewery": "0003",
+	"type": "sensor",
+	"model": "none",
+	"metricType": "AMBIENT_TEMPERATURE",
+	"stageId": "1",
+	"profileId": "0" 
+}
