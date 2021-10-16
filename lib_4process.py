@@ -5,6 +5,7 @@ from time import sleep
 import cv2
 from PIL import Image,ImageFile
 import io
+import os
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 LOG_FILE = os.getenv("LOG_FILE")
@@ -207,6 +208,7 @@ def get_photo_old(ip):
 def wait_photo(ip):
     error = 0
     action = "Wait Photo"
+    capture = "0"
     try:
         capture = requests.get(ip + "/shooting", timeout=(timeout_connection,timeout_read)).text
     except requests.Timeout as e:
