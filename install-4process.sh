@@ -19,7 +19,7 @@ echo "---------------------------"
 sudo -u pi pip3 install numpy -U
 sudo pip3 install opencv-python
 sudo -u pi pip3 -U requests
-sudo -u pi pip3 --ignore-installed requests
+sudo -u pi pip3 --force-reinstall -U requests
 sudo -u pi pip3 install datetime
 #sudo -u pi pip3 install opencv-contrib-python
 sudo -u pi pip3 install boto3
@@ -45,7 +45,7 @@ After=multi-user.target
 [Service]
 Type=idle
 ExecStart=/usr/bin/python3 /home/pi/4process-acquisition/main_4process.py
-WorkingDirectory=/home/pi/4Process
+WorkingDirectory=/home/pi/4process-acquisition
 User=pi
 Restart=always
 RestartSec=20
@@ -53,6 +53,7 @@ StartLimitInterval=0
 StandardOutput=syslog
 StandardError=syslog
 Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=/home/pi/4process-acquisition/4process.env
 
 [Install]
 WantedBy=multi-user.target
@@ -67,7 +68,7 @@ After=multi-user.target
 [Service]
 Type=idle
 ExecStart=/usr/bin/python3 /home/pi/4process-acquisition/client_4process.py
-WorkingDirectory=/home/pi/4Process
+WorkingDirectory=/home/pi/4process-acquisition
 User=pi
 Restart=always
 RestartSec=60
@@ -75,6 +76,7 @@ StartLimitInterval=0
 StandardOutput=syslog
 StandardError=syslog
 Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=/home/pi/4process-acquisition/4process.env
 
 [Install]
 WantedBy=multi-user.target
