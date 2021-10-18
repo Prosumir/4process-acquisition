@@ -13,8 +13,6 @@ delay = 20 #delay entre os logs
 date = datetime.datetime.utcnow()
 
 while(modules):
-    print("Loading Modules")
-    modules = lib_4process.load_modules()
     alarm = date + datetime.timedelta(seconds=delay)
     print("Capturing")
     for module in modules:
@@ -54,4 +52,6 @@ while(modules):
     print("Waiting until {}".format(alarm.strftime("%d-%m-%Y_%H:%M:%S")))
     while(date < alarm):
         date = datetime.datetime.utcnow()
+    print("Loading Modules")
+    modules = lib_4process.load_modules()
 print("OUT")
